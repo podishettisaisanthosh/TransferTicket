@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <style>
+             img{
+            height: 200px;width: 200px;border:2px solid black;
+        }
+       
+        </style>
+    </head>
+    <body>
+        <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-database.js"></script>
+        <script>
+                       const firebaseConfig = {
+    apiKey: "AIzaSyD2sCw2SvRDXaNvzApmPV3q7bC2Z2iLzaI",
+    authDomain: "tickettransfer-fb270.firebaseapp.com",
+    projectId: "tickettransfer-fb270",
+    storageBucket: "tickettransfer-fb270.appspot.com",
+    messagingSenderId: "285985594871",
+    appId: "1:285985594871:web:ad374954214566f615e2f2",
+    measurementId: "G-Z9N0YH4PB1"
+  };
+      firebase.initializeApp(firebaseConfig);
+          firebase.analytics(); 
+      </script>
+        <h1>Your Ticket</h1>
+        <img id="myimg">
+    </body>
+    <script>
+        
+        
+        window.onload = retrieve();
+        function retrieve(){
+            var storedValue=localStorage.getItem("contacts");
+            
+            firebase.database().ref('logindetails').child('restaurent').child(storedValue).on('value',function(snapshot){
+        document.getElementById('myimg').src=snapshot.val().Link;
+    })
+  }
+    </script>
+</html>

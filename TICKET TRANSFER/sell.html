@@ -1,0 +1,320 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <style>
+        img{
+        height: 200px;width: 200px;border:2px solid black;
+    }
+        body{
+        background-image: url(imggg.jpg);
+        background-position: center center;
+        background-size:cover;
+        background-attachment: fixed;
+      }
+      #ui{
+          background-color:goldenrod;
+          padding:30px;
+          margin-top: 30px;
+          border-radius: 30px;
+          opacity: 0.8;
+      }
+      #ui label,h1,h2{
+          color:#fff;
+  
+      }
+      .form-control {
+  padding-left: 5px;
+
+  background-size: 20px;
+}
+.icon1{
+    padding-left: 5px;
+    background: url("movie.png") no-repeat right;
+    background-size: 40px;
+}
+.icon2{
+    padding-right: 25px;
+    background: url("seating.png") no-repeat right;
+    background-size: 60px;
+}
+.icon3{
+    padding-right: 25px;
+    background: url("seat.png") no-repeat right;
+    background-size: 60px;
+}
+.icon4{
+    padding-right: 25px;
+    background: url("time.png") no-repeat right;
+    background-size: 40px;
+}
+.icon5{
+    padding-left: 5px;
+    background: url("money.png") no-repeat right;
+    background-size: 50px;
+}
+.icon6{
+    padding-right: 25px;
+    background: url("loaction.png") no-repeat right;
+    background-size: 45px;
+}
+.icon7{
+    padding-right: 25px;
+    background: url("TheatreName.png") no-repeat right;
+    background-size: 50px;
+}
+.icon8{
+    padding-right: 25px;
+    background: url("payu.png") no-repeat right;
+    background-size: 50px;
+}
+.icon9{
+    padding-right: 25px;
+    background: url("contact.png") no-repeat right;
+    background-size: 45px;
+}
+.icon10{
+    padding-right: 25px;
+    background: url("date.png") no-repeat right;
+    background-size: 40px;
+}
+.icon13{
+    padding-right: 25px;
+    background: url("https://static.thenounproject.com/attribution/1093007-600.png") no-repeat right;
+    background-size: 20px;
+}
+
+.input-icons i {
+            position: absolute;
+        }
+/*input glowing*/
+        input[type=text], textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(red, green, blue, alpha);
+}
+ 
+input[type=text]:focus, textarea:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(81, 203, 238, 1);
+}
+::placeholder {
+  color: purple;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color:purple;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+ color:purple;
+}
+
+
+
+  </style>
+    <body>
+        <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-database.js"></script>
+        
+        <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-storage.js"></script>
+        <script>
+             const firebaseConfig = {
+    apiKey: "AIzaSyD2sCw2SvRDXaNvzApmPV3q7bC2Z2iLzaI",
+    authDomain: "tickettransfer-fb270.firebaseapp.com",
+    projectId: "tickettransfer-fb270",
+    storageBucket: "tickettransfer-fb270.appspot.com",
+    messagingSenderId: "285985594871",
+    appId: "1:285985594871:web:ad374954214566f615e2f2",
+    measurementId: "G-Z9N0YH4PB1"
+  };
+  firebase.initializeApp(firebaseConfig);
+          firebase.analytics();
+        </script>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+        
+                </div>
+                <div class="col-lg-6">
+                    <div id="ui">
+                        <h1 align="center">Sell Ticket</h1>
+                    <hr>
+                        <form class="form-group text-center" >
+                            <div class="row" >
+                                <div class="col-lg-6">
+                                
+                                    <label>Movie Name</label>
+                                    <br>    
+                                    <input type="text" placeholder="Movie Name" id="MovieName" class="icon1" class="form-control" >
+                                    
+                                    <br>
+                                
+                                </div>
+                                <div class="col-lg-6">
+                                    <label>No Of Seats</label>
+                                    <input type="text" placeholder="No of seats" id="seats" class="icon2" class="form-control">
+                                    <br>
+                                  <br>
+                                </div>
+                               
+                               
+                            </div>
+                           
+                            <input type="text" placeholder="Seating Preference" id="seating" class="icon3" class="form-control"><br>
+                           
+                         
+                            <div class="col-lg-6">
+                                <label>Show Time</label>
+                                <input type="text" placeholder="Show time" id="showtime" class="icon4" class="form-control"><br>
+                                <br>
+                                <br>
+                            </div>
+                            <div class="col-lg-6">
+                                <label>Selling Rate</label>
+                                <input type="text" placeholder="Selling Rate" id="SellingRate" class="icon5" class="form-control"><br>
+                                <br>
+                                  <br>
+                            </div>
+                            <input type="text" placeholder="Show date" id="showdate" class="icon10" class="form-control"><br>
+
+                            <div class="col-lg-6">
+                                <label>Location</label>
+                                <input type="text" placeholder="location" id="Location" class="icon6" class="form-control"><br>
+                                <br>
+                                  <br>
+                            </div>
+                           
+                            <div class="col-lg-6">
+                                <label>Theatre Name</label>
+                       
+                                <input type="text" placeholder="Theatre Name" id="TheatreName" class="icon7" class="form-control"><br>
+                                
+                                <br>
+                                  <br>
+                                
+                            </div>
+                            <div class="col-lg-6">
+                                <label>Payment(upi,phonpay,gpay,paytm,    paypal etc..)</label>
+                       
+                                <input type="text" placeholder="Payment Mode " id="Payment" class="icon8" class="form-control"><br>
+                                <br>
+                                <br>
+                                <br>
+                                  <br>
+                            </div>
+                            <div class="col-lg-6">
+                                <br>
+                                <label>Contact</label>
+                       
+                                <input type="text" placeholder="Contact " id="Contact" class="icon9" class="form-control"><br>
+                                <br>
+                                <br>
+                                <br>
+                                  <br>
+                            </div>
+                         
+                           
+                IMAGE NAME<input type="text" id="namebox">
+                <img id="myimg" src="uploadimage.jpg" ><label id="UpProgress"></label><br><br>    
+                        </form>
+                        
+                        <button id="select" >SELECT IMAGE</button>
+        <button id="upload">upload IMAGE</button>
+    
+                        <button onclick="TT()" class="btn btn-primary btn-block btn-lg">send request</button>
+                    
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                </div>
+            </div>
+          </div>
+                  
+          
+        </div>
+<script>
+function TT(){ 
+ alert("successfully request has been sent to ngo");
+}
+var ImgName,ImgUrl;
+var files=[];
+var reader;
+document.getElementById("select").onclick=function(e){
+var input=document.createElement('input');
+input.type='file';
+
+input.onchange = e => {
+  files=e.target.files;
+  reader=new FileReader();
+  reader.onload=function(){
+      document.getElementById("myimg").src=reader.result;
+  }
+  reader.readAsDataURL(files[0])
+}
+input.click();
+}
+document.getElementById("upload").onclick=function(){
+ImgName = document.getElementById('namebox').value;
+var uploadTask = firebase.storage().ref('Images/'+ImgName+".png").put(files[0]);
+uploadTask.on('state_changed',function(snapshot){
+var progress=(snapshot.bytesTransferred/snapshot.totalBytes)*100;
+document.getElementById('UpProgress').innerHTML='Upload'+progress+'%';
+},
+function(error){
+alert("error in the uploading image"+error);
+},
+function(){
+uploadTask.snapshot.ref.getDownloadURL().then(function(url){
+ImgUrl = url;
+var m1=document.getElementById("MovieName").value;
+  
+  var m2=document.getElementById("seats").value;
+  var m3=document.getElementById("seating").value;
+  
+  var m4=document.getElementById("showtime").value;
+  var m5=document.getElementById("SellingRate").value;
+  var m6=document.getElementById("Location").value;
+  var m7=document.getElementById("TheatreName").value;
+  var m8=document.getElementById("Payment").value;
+  var m9=document.getElementById("Contact").value;
+  var m10=document.getElementById("showdate").value;
+
+firebase.database().ref('logindetails').child('restaurent').child(m9).set(
+{ 
+Link:ImgUrl,
+MovieName:m1,
+    seats:m2,
+    seating:m3,
+    showtime:m4,
+    SellingRate:m5,
+    Location:m6,
+    TheatreName:m7,
+Payment:m8,
+Contact:m9,
+showdate:m10
+
+});
+alert("image added successfully")
+}
+);
+});
+}
+</script>
+    </body>
+</html>
